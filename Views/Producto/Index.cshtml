@@ -1,24 +1,38 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@model List<Producto>
+﻿@model List<GestionInventario.Models.Producto>
 
-<h2>Productos</h2>
-<hr />
-
-<div class="container">
-   <div class="row align-content-center">
-@foreach (var producto in Model)
-{
-        <div class="col-4 border shadow m-2 p-2 product-card">
-            <h4>@producto.Nombre</h4>
-            <p>@producto.Descripcion</p>
-            <p>Precio: @producto.Precio.ToString("C")</p>
-            <div>
-                <a asp-action="Edit" asp-route-id="@producto.Id">Editar</a>
-                <a asp-action="Delete" asp-route-id="@producto.Id">Delete</a>
-            </div>
-        </div>
+@{
+    ViewData["Title"] = "Productos";
 }
-   </div>
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">Lista de Productos</h2>
+    <div class="d-flex justify-content-end mb-3">
+        <a asp-action="Create" class="btn btn-success">Agregar Producto</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center">No hay productos registrados.</div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var producto in Model)
+            {
+                <div class="col">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@producto.Nombre</h5>
+                            <p class="card-text">@producto.Descripcion</p>
+                            <p class="card-text"><strong>Precio:</strong> @producto.Precio.ToString("C")</p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a asp-action="Edit" asp-route-id="@producto.Id" class="btn btn-primary btn-sm">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@producto.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 </div>
