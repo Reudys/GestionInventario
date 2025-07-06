@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Producto>
+
+<h2>Productos</h2>
+<hr />
+
+<div class="container">
+   <div class="row align-content-center">
+@foreach (var producto in Model)
+{
+        <div class="col-4 border shadow m-2 p-2 product-card">
+            <h4>@producto.Nombre</h4>
+            <p>@producto.Descripcion</p>
+            <p>Precio: @producto.Precio.ToString("C")</p>
+            <div>
+                <a asp-action="Edit" asp-route-id="@producto.Id">Editar</a>
+                <a asp-action="Delete" asp-route-id="@producto.Id">Delete</a>
+            </div>
+        </div>
+}
+   </div>
+</div>
