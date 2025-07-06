@@ -229,3 +229,4 @@ C:\Users\Rey\Desktop\Aplicaciones\C#C#C#\C# Practice\GestionInventario\bin\Debug
 C:\Users\Rey\Desktop\Aplicaciones\C#C#C#\C# Practice\GestionInventario\obj\Debug\net8.0\GestionInventario.csproj.AssemblyReference.cache
 C:\Users\Rey\Desktop\Aplicaciones\C#C#C#\C# Practice\GestionInventario\obj\Debug\net8.0\GestionI.14355B1F.Up2Date
 C:\Users\Rey\Desktop\Aplicaciones\C#C#C#\C# Practice\GestionInventario\bin\Debug\net8.0\libman.json
+C:\Users\Rey\Desktop\Aplicaciones\C#C#C#\C# Practice\GestionInventario\obj\Debug\net8.0\GestionInventario.sourcelink.json
