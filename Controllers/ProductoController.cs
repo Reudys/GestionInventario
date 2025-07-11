@@ -7,6 +7,20 @@ namespace GestionInventario.Controllers
     {
         private static List<Producto> productos = new List<Producto>();
         private int nextId = 1;
+        public ProductoController()
+        {
+            if (productos.Count == 0)
+            {
+                productos.Add(new Producto
+                {
+                    Id = nextId++,
+                    Nombre = "Laptop",
+                    Descripcion = "Laptop para oficina con 16GB RAM",
+                    Precio = 850.99m
+                });
+            }
+        }
+
         public IActionResult Index()
         {
             return View(productos);
