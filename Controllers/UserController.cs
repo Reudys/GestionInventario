@@ -8,6 +8,21 @@ namespace GestionInventario.Controllers
         private static List<User> users = new List<User>();
         private static int nextId = 1;
 
+        static UserController()
+        {
+            if (users.Count == 0)
+            {
+                users.Add(new User
+                {
+                    Id = nextId++,
+                    Name = "Estrella",
+                    Username = "King",
+                    Password = "1234",
+                    ConfirmPassword = "1234"
+                });
+            }
+        }
+
         [HttpGet]
         public IActionResult Login()
         {
