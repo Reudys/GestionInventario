@@ -1,6 +1,5 @@
 ﻿@{
     var currentAction = ViewContext.RouteData.Values["Action"]?.ToString();
-    var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
     var isLoginOrRegister = currentAction == "Login" || currentAction == "Register";
 }
 
